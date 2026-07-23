@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/Reveal";
+
 const LINKS = [
   {
     icon: (
@@ -30,7 +32,7 @@ const LINKS = [
     label: "Email",
     value: "tajveed.aslam@gmail.com",
     href:  "mailto:tajveed.aslam@gmail.com",
-    color: "bg-indigo-500/10 border-indigo-500/20 text-indigo-400 hover:bg-indigo-500/20",
+    color: "bg-teal-500/10 border-teal-500/20 text-teal-400 hover:bg-teal-500/20",
   },
 ];
 
@@ -38,36 +40,38 @@ export function Contact() {
   return (
     <section id="contact" className="py-24 px-6 bg-gray-950/50">
       <div className="max-w-2xl mx-auto text-center">
-        <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">
-          Contact
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Let&apos;s work{" "}
-          <span className="gradient-text">together</span>
-        </h2>
-        <p className="text-gray-400 mb-12 leading-relaxed">
-          I&apos;m open to full-time roles, contract work, and consulting — especially
-          positions that blend QA expertise with full-stack development. Feel free to
-          reach out on any of the channels below.
-        </p>
+        <Reveal>
+          <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-3">
+            Contact
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Let&apos;s work{" "}
+            <span className="gradient-text">together</span>
+          </h2>
+          <p className="text-gray-400 mb-12 leading-relaxed">
+            I&apos;m open to full-time roles, contract work, and consulting — especially
+            positions that blend QA expertise with full-stack development. Feel free to
+            reach out on any of the channels below.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("mailto") ? "_self" : "_blank"}
-              rel="noopener noreferrer"
-              className={`flex items-center gap-3 px-6 py-4 rounded-2xl border transition-colors ${link.color}`}
-            >
-              {link.icon}
-              <div className="text-left">
-                <div className="text-xs text-gray-500 leading-none">{link.label}</div>
-                <div className="text-sm font-medium mt-0.5 truncate max-w-[160px]">{link.value}</div>
-              </div>
-            </a>
-          ))}
-        </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto") ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+                className={`flex items-center gap-3 px-6 py-4 rounded-2xl border transition-colors ${link.color}`}
+              >
+                {link.icon}
+                <div className="text-left">
+                  <div className="text-xs text-gray-500 leading-none">{link.label}</div>
+                  <div className="text-sm font-medium mt-0.5 truncate max-w-[160px]">{link.value}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/Reveal";
+
 interface Role {
   title:     string;
   org:       string;
@@ -41,60 +43,66 @@ export function Experience() {
   return (
     <section id="experience" className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            Experience
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            9 years,{" "}
-            <span className="gradient-text">two disciplines</span>
-          </h2>
-          <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
-            Three years building the software, six years making sure it works.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-14">
+            <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-3">
+              Experience
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              9 years,{" "}
+              <span className="gradient-text">two disciplines</span>
+            </h2>
+            <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
+              Three years building the software, six years making sure it works.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="relative">
-          <div className="absolute left-[7px] sm:left-[9px] top-2 bottom-2 w-px bg-gradient-to-b from-indigo-500/50 via-violet-500/30 to-transparent" />
+          <div className="absolute left-[7px] sm:left-[9px] top-2 bottom-2 w-px bg-gradient-to-b from-teal-500/50 via-sky-500/30 to-transparent" />
 
           <div className="space-y-10">
-            {ROLES.map((role) => (
-              <div key={role.org} className="relative pl-8 sm:pl-10">
-                <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-indigo-400 bg-gray-950" />
+            {ROLES.map((role, i) => (
+              <Reveal key={role.org} delay={i * 100}>
+                <div className="relative pl-8 sm:pl-10">
+                  <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-teal-400 bg-gray-950" />
 
-                <div className="glow-card bg-gray-900/60 rounded-2xl p-7 border border-white/5">
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
-                    <h3 className="text-lg font-bold text-white">
-                      {role.title} <span className="text-gray-500 font-normal">— {role.org}</span>
-                    </h3>
-                    <span className="text-sm text-indigo-300 font-mono">{role.period}</span>
+                  <div className="glow-card bg-gray-900/60 rounded-2xl p-7 border border-white/5">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+                      <h3 className="text-lg font-bold text-white">
+                        {role.title} <span className="text-gray-500 font-normal">— {role.org}</span>
+                      </h3>
+                      <span className="text-sm text-teal-300 font-mono">{role.period}</span>
+                    </div>
+                    <p className="text-xs text-gray-500 mb-4">{role.location}</p>
+                    {role.note && (
+                      <p className="text-xs text-amber-300/80 mb-4 italic">{role.note}</p>
+                    )}
+                    <ul className="space-y-2">
+                      {role.points.map((p) => (
+                        <li key={p} className="flex items-start gap-2 text-sm text-gray-400">
+                          <span className="text-teal-400 mt-0.5 shrink-0">▸</span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="text-xs text-gray-500 mb-4">{role.location}</p>
-                  {role.note && (
-                    <p className="text-xs text-violet-300/80 mb-4 italic">{role.note}</p>
-                  )}
-                  <ul className="space-y-2">
-                    {role.points.map((p) => (
-                      <li key={p} className="flex items-start gap-2 text-sm text-gray-400">
-                        <span className="text-indigo-400 mt-0.5 shrink-0">▸</span>
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
+              </Reveal>
             ))}
 
             {/* Education */}
-            <div className="relative pl-8 sm:pl-10">
-              <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-gray-600 bg-gray-950" />
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 className="text-base font-semibold text-gray-300">
-                  B.S. Computer Science <span className="text-gray-500 font-normal">— KIET, Pakistan</span>
-                </h3>
-                <span className="text-sm text-gray-500 font-mono">Aug 2011 – Aug 2016</span>
+            <Reveal delay={ROLES.length * 100}>
+              <div className="relative pl-8 sm:pl-10">
+                <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-gray-600 bg-gray-950" />
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 className="text-base font-semibold text-gray-300">
+                    B.S. Computer Science <span className="text-gray-500 font-normal">— KIET, Pakistan</span>
+                  </h3>
+                  <span className="text-sm text-gray-500 font-mono">Aug 2011 – Aug 2016</span>
+                </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>

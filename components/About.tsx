@@ -1,9 +1,11 @@
+import { Reveal } from "@/components/Reveal";
+
 export function About() {
   const stats = [
     { value: "9",     label: "Years in Software"     },
     { value: "2,400+", label: "Automated Tests Authored" },
     { value: "4",     label: "Major Projects"        },
-    { value: "3",     label: "AI-Powered Projects"   },
+    { value: "4",     label: "AI-Powered Projects"   },
   ];
 
   return (
@@ -11,8 +13,8 @@ export function About() {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* Text */}
-          <div>
-            <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">
+          <Reveal>
+            <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-3">
               About Me
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
@@ -47,20 +49,22 @@ export function About() {
                 with relocation on the table.
               </p>
             </div>
-          </div>
+          </Reveal>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {stats.map((s) => (
-              <div
-                key={s.label}
-                className="glow-card bg-gray-900/60 rounded-2xl p-6 border border-white/5 text-center"
-              >
-                <div className="text-4xl font-extrabold gradient-text mb-1">{s.value}</div>
-                <div className="text-sm text-gray-400">{s.label}</div>
-              </div>
-            ))}
-          </div>
+          <Reveal delay={150}>
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="glow-card bg-gray-900/60 rounded-2xl p-6 border border-white/5 text-center"
+                >
+                  <div className="text-4xl font-extrabold gradient-text mb-1">{s.value}</div>
+                  <div className="text-sm text-gray-400">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

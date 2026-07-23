@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/Reveal";
 
 interface Project {
   title:         string;
@@ -52,9 +53,9 @@ const PROJECTS: Project[] = [
       "SPA-style animated page transitions, hero carousel, glassmorphism UI",
     ],
     github:        "https://github.com/tajveed-aslam/AZMartDev",
-    gradient:      "from-indigo-500 via-violet-500 to-transparent",
+    gradient:      "from-sky-500 via-blue-500 to-transparent",
     badge:         "Full-Stack",
-    badgeColor:    "bg-indigo-500/20 text-indigo-300 border-indigo-500/30",
+    badgeColor:    "bg-sky-500/20 text-sky-300 border-sky-500/30",
     icon:          "🛒",
     screenshot:    "/screenshots/azmart-home.png",
     screenshotAlt: "A&Z Mart homepage showing the hero section and product catalogue",
@@ -72,9 +73,9 @@ const PROJECTS: Project[] = [
       "Mock mode for zero-cost demos — no API key required for development",
     ],
     github:        "https://github.com/tajveed-aslam/TestForge",
-    gradient:      "from-violet-500 via-fuchsia-500 to-transparent",
+    gradient:      "from-amber-500 via-orange-500 to-transparent",
     badge:         "AI Tooling",
-    badgeColor:    "bg-violet-500/20 text-violet-300 border-violet-500/30",
+    badgeColor:    "bg-amber-500/20 text-amber-300 border-amber-500/30",
     icon:          "⚡",
     screenshot:    "/screenshots/testforge-generator.png",
     screenshotAlt: "TestForge test generator showing framework selector and live streaming code output",
@@ -92,9 +93,9 @@ const PROJECTS: Project[] = [
       "Full AI-First SDLC documentation included in the repository",
     ],
     github:        "https://github.com/tajveed-aslam/AZMartQA",
-    gradient:      "from-fuchsia-500 via-pink-500 to-transparent",
+    gradient:      "from-cyan-500 via-teal-500 to-transparent",
     badge:         "QA Automation",
-    badgeColor:    "bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-500/30",
+    badgeColor:    "bg-cyan-500/20 text-cyan-300 border-cyan-500/30",
     icon:          "🧪",
     screenshot:    "/screenshots/testforge-docs.png",
     screenshotAlt: "Playwright SDLC document output panel showing a generated Test Strategy",
@@ -112,9 +113,9 @@ const PROJECTS: Project[] = [
       "MFA/OTP automation via TOTP secret injection — tests the full auth flow",
     ],
     github:        null,
-    gradient:      "from-pink-500 via-rose-500 to-transparent",
+    gradient:      "from-slate-500 via-gray-500 to-transparent",
     badge:         "Enterprise QA",
-    badgeColor:    "bg-pink-500/20 text-pink-300 border-pink-500/30",
+    badgeColor:    "bg-slate-500/20 text-slate-300 border-slate-500/30",
     icon:          "🏢",
     screenshot:    null,
     screenshotAlt: null,
@@ -126,23 +127,25 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            Projects
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            Things I&apos;ve{" "}
-            <span className="gradient-text">built & tested</span>
-          </h2>
-          <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
-            Every project covers the full lifecycle — design, build, automate, document.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-14">
+            <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-3">
+              Projects
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              Things I&apos;ve{" "}
+              <span className="gradient-text">built & tested</span>
+            </h2>
+            <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
+              Every project covers the full lifecycle — design, build, automate, document.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="space-y-8">
-          {PROJECTS.map((project) => (
+          {PROJECTS.map((project, i) => (
+            <Reveal key={project.title} delay={i * 60}>
             <div
-              key={project.title}
               className="glow-card bg-gray-900/60 rounded-2xl border border-white/5 overflow-hidden"
             >
               {/* Screenshot preview */}
@@ -212,7 +215,7 @@ export function Projects() {
                 <ul className="space-y-1.5 mb-6">
                   {project.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-2 text-sm text-gray-400">
-                      <span className="text-indigo-400 mt-0.5 shrink-0">▸</span>
+                      <span className="text-teal-400 mt-0.5 shrink-0">▸</span>
                       {h}
                     </li>
                   ))}
@@ -235,6 +238,7 @@ export function Projects() {
                 )}
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

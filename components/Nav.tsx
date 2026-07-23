@@ -44,7 +44,7 @@ export function Nav() {
               href="https://github.com/tajveed-aslam"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm px-4 py-1.5 rounded-full border border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 transition-colors"
+              className="text-sm px-4 py-1.5 rounded-full border border-teal-500/50 text-teal-400 hover:bg-teal-500/10 transition-colors"
             >
               GitHub
             </a>

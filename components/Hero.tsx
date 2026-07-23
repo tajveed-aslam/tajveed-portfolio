@@ -75,6 +75,14 @@ export function Hero() {
               View My Work
             </a>
             <a
+              href="https://tajveed-aslam.github.io/tajveed-cv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-xl font-semibold text-sm border border-white/10 text-gray-300 hover:bg-white/5 transition-colors"
+            >
+              View CV
+            </a>
+            <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"

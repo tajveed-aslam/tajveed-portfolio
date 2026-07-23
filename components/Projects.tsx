@@ -32,7 +32,7 @@ const PROJECTS: Project[] = [
       "36 unit tests covering the safety gates and tool layer against fixture data — no LLM or live browser needed to verify the trust boundary",
     ],
     github:        "https://github.com/tajveed-aslam/Self-healing-test-agent",
-    demo:          "https://self-healing-test-agent-7vzpb2h8n-tajveed-aslams-projects.vercel.app/",
+    demo:          "https://self-healing-test-agent.vercel.app/",
     gradient:      "from-emerald-500 via-teal-500 to-transparent",
     badge:         "AI Agent",
     badgeColor:    "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",

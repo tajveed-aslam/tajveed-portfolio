@@ -98,8 +98,8 @@ const PROJECTS: Project[] = [
     badge:         "QA Automation",
     badgeColor:    "bg-cyan-500/20 text-cyan-300 border-cyan-500/30",
     icon:          "🧪",
-    screenshot:    "/screenshots/testforge-docs.png",
-    screenshotAlt: "Playwright SDLC document output panel showing a generated Test Strategy",
+    screenshot:    null,
+    screenshotAlt: null,
   },
   {
     title:       "Enterprise Web Portal — QA Automation Suite",

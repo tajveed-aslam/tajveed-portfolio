@@ -63,17 +63,18 @@ const PROJECTS: Project[] = [
   },
   {
     title:       "TestForge — AI Test & SDLC Generator",
-    subtitle:    "AI Tooling · Next.js 14 + FastAPI + Claude API",
+    subtitle:    "AI Tooling · Next.js 14 + FastAPI + Gemini API",
     description:
       "An AI-powered developer tool that generates production-ready test automation code and complete SDLC documentation from a plain-English feature description. Supports 10 test frameworks across 5 languages, 3 code patterns, and 8 professional document types. Responses stream in real-time via Server-Sent Events so output appears as it is generated — with copy-to-clipboard and file download on completion.",
-    tech: ["Next.js 14", "FastAPI", "Claude API", "TypeScript", "Playwright", "Python", "SSE Streaming", "Tailwind CSS"],
+    tech: ["Next.js 14", "FastAPI", "Gemini API", "TypeScript", "Playwright", "Python", "SSE Streaming", "Tailwind CSS"],
     highlights: [
       "10 frameworks: Playwright, Cypress, Selenium (Java/Python/C#), WebdriverIO, pytest, Robot Framework",
       "8 SDLC document types: Test Strategy, Test Plan, RTM, User Stories, Bug Reports, Release Notes, and more",
-      "Live streaming output via SSE — output appears word-by-word like ChatGPT",
-      "Mock mode for zero-cost demos — no API key required for development",
+      "Live streaming output via SSE, JSON-framed per chunk so multi-line output from the model can't break the stream",
+      "Mock mode for zero-cost demos — no API key required, plus a graceful fallback message if the live API ever fails mid-stream",
     ],
     github:        "https://github.com/tajveed-aslam/TestForge",
+    demo:          "https://testforge-alpha.vercel.app/",
     gradient:      "from-amber-500 via-orange-500 to-transparent",
     badge:         "AI Tooling",
     badgeColor:    "bg-amber-500/20 text-amber-300 border-amber-500/30",

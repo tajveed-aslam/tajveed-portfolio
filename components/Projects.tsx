@@ -7,6 +7,7 @@ interface Project {
   tech:          string[];
   highlights:    string[];
   github:        string | null;
+  demo?:         string | null;
   gradient:      string;
   badge:         string;
   badgeColor:    string;
@@ -17,6 +18,27 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
+  {
+    title:       "Self-Healing Test Agent",
+    subtitle:    "AI Agent · TypeScript + Playwright + Gemini API",
+    description:
+      "An agent that diagnoses and repairs Playwright tests failing on stale selectors — reading the failing test, inspecting the real DOM at the point of failure, proposing a one-line locator fix, and re-running the test to verify it, capped at three attempts. The core design decision is safety, not capability: two deterministic gates sit between the model and the codebase, so the agent only ever touches failures that look like genuine selector rot, and only via single-line locator edits — anything that looks like a real product or assertion bug is declined and flagged for a human instead of being force-fixed.",
+    tech: ["TypeScript", "Playwright", "Gemini API", "Function Calling", "Node.js", "Vitest"],
+    highlights: [
+      "Two independent safety gates — error-type classification before the model runs, diff-shape validation on every proposed edit — neither trusts the model's own stated diagnosis",
+      "Four-tool agentic loop (read_file, inspect_dom, edit_file, run_test) on Gemini's function-calling API, with a hand-rolled paren-balanced scanner so the diff guardrail survives real locator syntax",
+      "inspect_dom captures a live accessibility-tree snapshot at the point of failure via a shared Playwright fixture, so fixes are grounded in the actual DOM rather than guessed from the error text alone",
+      "36 unit tests covering the safety gates and tool layer against fixture data — no LLM or live browser needed to verify the trust boundary",
+    ],
+    github:        "https://github.com/tajveed-aslam/Self-healing-test-agent",
+    demo:          null,
+    gradient:      "from-emerald-500 via-teal-500 to-transparent",
+    badge:         "AI Agent",
+    badgeColor:    "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+    icon:          "🩹",
+    screenshot:    null,
+    screenshotAlt: null,
+  },
   {
     title:       "A&Z Mart — E-Commerce Platform",
     subtitle:    "Full-Stack Development · Next.js 14 + FastAPI",
@@ -153,6 +175,16 @@ export function Projects() {
                     </div>
                   </div>
                   <div className="flex gap-2">
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors"
+                      >
+                        ↗ Live Demo
+                      </a>
+                    )}
                     {project.github ? (
                       <a
                         href={project.github}

@@ -42,17 +42,18 @@ const PROJECTS: Project[] = [
   },
   {
     title:       "A&Z Mart — E-Commerce Platform",
-    subtitle:    "Full-Stack Development · Next.js 14 + FastAPI",
+    subtitle:    "Full-Stack Development · Next.js 14 + FastAPI + Gemini API",
     description:
-      "A production-quality e-commerce application built from scratch with full multi-role support. Customers browse a 25-item product catalogue with real-time search and category filters, manage a persistent shopping cart, complete Cash-on-Delivery checkout, and track live order status through an animated timeline. Sellers receive email notifications on new orders. An admin dashboard provides full CRUD for products, categories, orders, and users.",
-    tech: ["Next.js 14", "FastAPI", "SQLite", "TypeScript", "Tailwind CSS", "Zustand", "TanStack Query", "JWT Auth"],
+      "A production-quality e-commerce application built from scratch with full multi-role support, headlined by a live AI shopping assistant powered by Google's Gemini API. Customers browse a 25-item product catalogue with real-time search and category filters, manage a persistent shopping cart, complete Cash-on-Delivery checkout, and track live order status through an animated timeline. Sellers receive email notifications on new orders. An admin dashboard provides full CRUD for products, categories, orders, and users.",
+    tech: ["Next.js 14", "FastAPI", "Gemini API", "SQLite", "TypeScript", "Tailwind CSS", "Zustand", "TanStack Query", "JWT Auth"],
     highlights: [
+      "Live AI shopping assistant (Gemini API), strictly bounded to A&Z Mart's own catalogue — deterministic prompt-injection guarding rejects jailbreak attempts before they ever reach the model, with a rule-based fallback if the LLM call fails",
+      "The assistant doesn't just recommend — it can add a product straight to your cart on request, with the actual mutation validated and executed server-side rather than trusted from the model's own reply text",
       "Multi-role system: customer, seller, admin — each with separate dashboards",
-      "AI product chatbot powered by Claude API for natural language product discovery",
       "14-currency converter with live exchange rates and localStorage persistence",
-      "SPA-style animated page transitions, hero carousel, glassmorphism UI",
     ],
     github:        "https://github.com/tajveed-aslam/AZMartDev",
+    demo:          "https://azmartdev.vercel.app/",
     gradient:      "from-sky-500 via-blue-500 to-transparent",
     badge:         "Full-Stack",
     badgeColor:    "bg-sky-500/20 text-sky-300 border-sky-500/30",

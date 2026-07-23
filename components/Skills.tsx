@@ -1,70 +1,73 @@
-const QA_SKILLS = [
-  { name: "Playwright",           level: 95 },
-  { name: "pytest",               level: 88 },
-  { name: "API Testing",          level: 92 },
-  { name: "AI-Assisted Testing",  level: 88 },
-  { name: "CI/CD (Jenkins)",      level: 80 },
-  { name: "Docker",               level: 75 },
-  { name: "Page Object Model",    level: 95 },
-  { name: "Test Planning / SDLC", level: 90 },
-];
-
-const DEV_SKILLS = [
-  { name: "Claude / LLM APIs",  level: 85 },
-  { name: "AI Prompt Engineering", level: 82 },
-  { name: "TypeScript",         level: 78 },
-  { name: "Next.js 14",         level: 75 },
-  { name: "FastAPI",            level: 70 },
-  { name: "Python",             level: 82 },
-  { name: "Tailwind CSS",       level: 80 },
-  { name: "REST APIs",          level: 88 },
-];
-
-function SkillBar({ name, level }: { name: string; level: number }) {
-  return (
-    <div>
-      <div className="flex justify-between text-sm mb-1.5">
-        <span className="text-gray-300 font-medium">{name}</span>
-        <span className="text-gray-500">{level}%</span>
-      </div>
-      <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-        <div
-          className="h-full rounded-full"
-          style={{
-            width: `${level}%`,
-            background: "linear-gradient(90deg, #6366f1, #8b5cf6)",
-          }}
-        />
-      </div>
-    </div>
-  );
+interface SkillGroup {
+  title: string;
+  icon:  string;
+  items: string[];
 }
 
-function SkillColumn({
-  title,
-  icon,
-  skills,
-  accent,
-}: {
-  title: string;
-  icon: string;
-  skills: { name: string; level: number }[];
-  accent: string;
-}) {
+const SKILL_GROUPS: SkillGroup[] = [
+  {
+    title: "Test Automation",
+    icon:  "🧪",
+    items: ["Playwright (TypeScript, POM)", "pytest", "Test Framework Design", "Data-Driven Testing", "C# / .NET Code Comprehension"],
+  },
+  {
+    title: "API & Backend Testing",
+    icon:  "🔌",
+    items: ["REST API Testing & Validation", "Postman", "SQL / Backend Validation"],
+  },
+  {
+    title: "Systems & Performance",
+    icon:  "⚙️",
+    items: ["Real-Time / ML-Driven Systems Testing", "Load & Performance Testing (10K+ concurrent)"],
+  },
+  {
+    title: "AI Tooling",
+    icon:  "🤖",
+    items: ["Claude Code", "GitHub Copilot", "Claude / LLM APIs", "AI-Assisted Test Generation", "Prompt Engineering"],
+  },
+  {
+    title: "CI/CD & DevOps",
+    icon:  "🚀",
+    items: ["Jenkins", "GitHub Actions", "Docker", "Git", "Bitbucket"],
+  },
+  {
+    title: "Development",
+    icon:  "💻",
+    items: ["C# / .NET", "ASP.NET", "REST APIs", "React.js", "Next.js", "FastAPI"],
+  },
+  {
+    title: "Languages & Databases",
+    icon:  "🗄️",
+    items: ["C#", "TypeScript", "Python", "JavaScript", "SQL", "SQL Server", "MySQL", "PostgreSQL", "SQLite"],
+  },
+];
+
+const SUPPLEMENTARY: { label: string; items: string[] }[] = [
+  { label: "Testing Types",  items: ["Functional", "Regression", "Smoke", "Integration", "E2E", "Cross-Browser", "API", "Load"] },
+  { label: "Methodologies",  items: ["Agile", "Scrum", "Kanban", "TDD", "BDD"] },
+  { label: "Also Familiar",  items: ["Cypress", "Selenium WebDriver"] },
+];
+
+function SkillGroupCard({ group }: { group: SkillGroup }) {
   return (
-    <div className="glow-card bg-gray-900/60 rounded-2xl p-8 border border-white/5">
-      <div className="flex items-center gap-3 mb-6">
+    <div className="glow-card bg-gray-900/60 rounded-2xl p-6 border border-white/5">
+      <div className="flex items-center gap-3 mb-4">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
-          style={{ background: accent }}
+          className="w-9 h-9 rounded-xl flex items-center justify-center text-lg shrink-0"
+          style={{ background: "rgba(99,102,241,0.15)" }}
         >
-          {icon}
+          {group.icon}
         </div>
-        <h3 className="text-lg font-bold text-white">{title}</h3>
+        <h3 className="text-sm font-bold text-white">{group.title}</h3>
       </div>
-      <div className="space-y-4">
-        {skills.map((s) => (
-          <SkillBar key={s.name} name={s.name} level={s.level} />
+      <div className="flex flex-wrap gap-1.5">
+        {group.items.map((item) => (
+          <span
+            key={item}
+            className="px-2.5 py-1 text-xs rounded-lg bg-gray-800/80 border border-white/5 text-gray-400"
+          >
+            {item}
+          </span>
         ))}
       </div>
     </div>
@@ -85,30 +88,28 @@ export function Skills() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <SkillColumn
-            title="QA & AI-Assisted Testing"
-            icon="🧪"
-            skills={QA_SKILLS}
-            accent="rgba(99,102,241,0.15)"
-          />
-          <SkillColumn
-            title="Development & AI Tooling"
-            icon="⚡"
-            skills={DEV_SKILLS}
-            accent="rgba(139,92,246,0.15)"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {SKILL_GROUPS.map((group) => (
+            <SkillGroupCard key={group.title} group={group} />
+          ))}
         </div>
 
-        {/* Tool badges */}
-        <div className="mt-10 flex flex-wrap gap-2 justify-center">
-          {["Claude API","AI Prompt Engineering","LLM Integration","Playwright","pytest","Next.js","FastAPI","TypeScript","Python","Docker","Jenkins","GitHub Actions","SQLite","Tailwind CSS","SSE Streaming","JWT Auth"].map((tool) => (
-            <span
-              key={tool}
-              className="px-3 py-1 text-xs rounded-full bg-gray-800/80 border border-white/5 text-gray-400"
-            >
-              {tool}
-            </span>
+        {/* Supplementary context rows */}
+        <div className="mt-10 space-y-4">
+          {SUPPLEMENTARY.map((row) => (
+            <div key={row.label} className="flex flex-wrap items-center gap-2 justify-center">
+              <span className="text-xs text-gray-600 uppercase tracking-widest font-semibold mr-1">
+                {row.label}:
+              </span>
+              {row.items.map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1 text-xs rounded-full bg-gray-800/60 border border-white/5 text-gray-500"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           ))}
         </div>
       </div>

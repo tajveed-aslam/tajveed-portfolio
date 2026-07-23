@@ -23,7 +23,7 @@ export function Hero() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm mb-8">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          Open to remote roles worldwide
+          Open to on-site, hybrid & remote — relocation OK
         </div>
 
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
@@ -32,12 +32,13 @@ export function Hero() {
         </h1>
 
         <p className="text-xl sm:text-2xl text-gray-300 font-medium mb-3">
-          Sr. Software Development Engineer in Test
+          Senior SDET · QA Automation Engineer
         </p>
 
         <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-          5+ years in test automation and quality engineering. Building full-stack products
-          and AI-powered developer tools with Next.js, FastAPI, and Claude API.
+          9 years in software — 6 in QA and test automation, built on 3 as a C#/.NET developer.
+          Playwright, real-time ML-systems testing, and full-stack AI tooling with Next.js,
+          FastAPI, and LLM APIs.
         </p>
 
         <div className="flex flex-wrap gap-3 justify-center">
@@ -47,6 +48,14 @@ export function Hero() {
             style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
           >
             View My Work
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-xl font-semibold text-sm border border-white/10 text-gray-300 hover:bg-white/5 transition-colors"
+          >
+            Download Resume
           </a>
           <a
             href="https://www.linkedin.com/in/muhammad-tajveed-aslam-07769968/"

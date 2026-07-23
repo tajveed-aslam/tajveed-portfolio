@@ -28,8 +28,8 @@ const LINKS = [
       </svg>
     ),
     label: "Email",
-    value: "tajveed.aslam@outlook.com",
-    href:  "mailto:tajveed.aslam@outlook.com",
+    value: "tajveed.aslam@gmail.com",
+    href:  "mailto:tajveed.aslam@gmail.com",
     color: "bg-indigo-500/10 border-indigo-500/20 text-indigo-400 hover:bg-indigo-500/20",
   },
 ];

@@ -1,9 +1,9 @@
 export function About() {
   const stats = [
-    { value: "5+",   label: "Years Experience"    },
-    { value: "4",    label: "Major Projects"      },
-    { value: "150+", label: "Automated Test Cases" },
-    { value: "3",    label: "AI-Powered Projects"  },
+    { value: "9",     label: "Years in Software"     },
+    { value: "2,400+", label: "Automated Tests Authored" },
+    { value: "4",     label: "Major Projects"        },
+    { value: "3",     label: "AI-Powered Projects"   },
   ];
 
   return (
@@ -21,10 +21,13 @@ export function About() {
             </h2>
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <p>
-                I&apos;m a Senior SDET with 5+ years of experience designing and building
-                test automation frameworks for enterprise software. My background spans
-                end-to-end UI testing with Playwright, REST API validation, CI/CD pipeline
-                integration, and Docker-based test environments.
+                I&apos;m a Senior SDET with 9 years in software — 6 in QA and test automation,
+                built on 3 as a C#/.NET developer. That developer background bridges dev and QA:
+                I read and review code to understand system behavior before I design a test for
+                it, rather than treating the app as a black box. At Afiniti, I specialise in
+                end-to-end Playwright automation backed by REST API coverage, SQL/backend
+                validation, and CI/CD integration — including load and functional testing on a
+                real-time, ML-driven decisioning system processing 10,000+ concurrent interactions.
               </p>
               <p>
                 To deepen my engineering breadth, I built <strong className="text-white">A&amp;Z Mart</strong> —
@@ -32,12 +35,16 @@ export function About() {
                 from scratch, then wrote a production-quality Playwright automation suite for it.
                 I also built <strong className="text-white">TestForge</strong>, an AI-powered tool
                 that generates test code across 10 frameworks and 8 types of SDLC documentation
-                using the Claude API with real-time streaming.
+                using the Claude API with real-time streaming, and{" "}
+                <strong className="text-white">Self-Healing Test Agent</strong>, an agent that
+                diagnoses and repairs stale Playwright selectors under two deterministic safety
+                gates rather than trusting a model&apos;s judgment alone.
               </p>
               <p>
-                I actively integrate AI into both development and testing workflows — from
-                AI-assisted test design and prompt engineering to building LLM-powered features
-                directly into products. Open to remote roles worldwide.
+                Claude Code and GitHub Copilot are a daily part of how I work — for test
+                scaffolding, edge-case generation, and refactoring — and I&apos;m currently upskilling
+                in Microsoft Power Platform testing. Open to on-site, hybrid, and remote roles,
+                with relocation on the table.
               </p>
             </div>
           </div>

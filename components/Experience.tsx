@@ -18,7 +18,7 @@ const ROLES: Role[] = [
     note:     "Promoted from SDET to Senior SDET, Feb 2022",
     points: [
       "Authored 2,400+ automated tests across enterprise workflows — 1,600+ in Playwright and pytest, 800+ on a proprietary simulation framework — cutting manual QA effort by ~40%",
-      "Ran end-to-end, integration, and load testing on a real-time, ML-driven decisioning system — simulating 10,000+ concurrent interactions and validating outcomes against shared-memory and SQL data stores",
+      "Ran end-to-end, integration, and load testing on a real-time, call-center decisioning system — simulating 10,000+ concurrent interactions and validating outcomes against shared-memory and SQL data stores",
       "Validated the production ML pipeline end-to-end, from model configuration through deployment to runtime scoring, in MySQL/PostgreSQL",
       "Built Playwright + pytest suites with Docker-containerised execution, integrated into Jenkins with JUnit XML and HTML reporting",
       "Led defect triage, root cause analysis, and live production debugging during critical releases",

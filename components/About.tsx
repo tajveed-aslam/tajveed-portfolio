@@ -29,7 +29,7 @@ export function About() {
                 it, rather than treating the app as a black box. At Afiniti, I specialise in
                 end-to-end Playwright automation backed by REST API coverage, SQL/backend
                 validation, and CI/CD integration — including load and functional testing on a
-                real-time, ML-driven decisioning system processing 10,000+ concurrent interactions.
+                real-time, call-center decisioning system processing 10,000+ concurrent interactions.
               </p>
               <p>
                 To deepen my engineering breadth, I built <strong className="text-white">A&amp;Z Mart</strong> —

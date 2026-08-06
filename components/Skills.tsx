@@ -23,7 +23,7 @@ const SKILL_GROUPS: SkillGroup[] = [
   {
     title:  "Systems & Performance",
     icon:   "⚙️",
-    items:  ["Real-Time / ML-Driven Systems Testing", "Load & Performance Testing (10K+ concurrent)"],
+    items:  ["Real-Time / Call-Center Systems Testing", "Simulation & Integration Testing", "Load & Performance Testing (10K+ concurrent)"],
     accent: "rgba(245,158,11,0.15)",
   },
   {

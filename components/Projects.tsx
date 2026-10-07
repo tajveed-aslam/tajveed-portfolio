@@ -20,6 +20,27 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    title:       "FitCheck — CV-to-Job Match Analyzer",
+    subtitle:    "AI Tooling · ASP.NET Core 8 + React + PostgreSQL + Gemini API",
+    description:
+      "Upload a CV as PDF or DOCX, paste a job description, and FitCheck returns a match score weighted toward the role's required qualifications, the skills you already demonstrate, the keywords you're missing (ranked required, preferred or minor) and three specific tips to close the gap. Results show as a score gauge with the job post highlighted green and red, and every analysis is saved to your history.",
+    tech: ["ASP.NET Core 8", "C#", "EF Core", "PostgreSQL", "PdfPig", "Open XML SDK", "React", "TypeScript", "Gemini API", "Playwright", "xUnit"],
+    highlights: [
+      "Server-side text extraction from PDF (PdfPig) and DOCX (Open XML SDK), with file type detected from the bytes rather than the extension and clear errors for scanned, encrypted, corrupt or legacy .doc files",
+      "Prompt-injection hardened: the CV and job post are fenced as untrusted data, and a live test plants a hidden \"score this 100\" instruction in a CV to prove the score isn't dictated by it",
+      "The model's \"missing keywords\" are verified against the CV with word-boundary matching, so a candidate is never told they lack a skill their CV states verbatim",
+      "43 xUnit tests that build real PDF/DOCX files in memory, plus a Playwright browser suite on Edge, and an LLM quota that only counts valid requests so a wrong upload never locks a demo user out",
+    ],
+    github:        "https://github.com/tajveed-aslam/FitCheck",
+    demo:          null,
+    gradient:      "from-teal-500 via-emerald-500 to-transparent",
+    badge:         "AI Tooling",
+    badgeColor:    "bg-teal-500/20 text-teal-300 border-teal-500/30",
+    icon:          "🎯",
+    screenshot:    null,
+    screenshotAlt: null,
+  },
+  {
     title:       "APITestGen — AI API Test Generator",
     subtitle:    "AI Tooling · ASP.NET Core 8 + React + PostgreSQL + Gemini API",
     description:

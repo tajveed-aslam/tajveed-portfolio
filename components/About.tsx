@@ -40,7 +40,10 @@ export function About() {
                 using the Claude API with real-time streaming, and{" "}
                 <strong className="text-white">Self-Healing Test Agent</strong>, an agent that
                 diagnoses and repairs stale Playwright selectors under two deterministic safety
-                gates rather than trusting a model&apos;s judgment alone.
+                gates rather than trusting a model&apos;s judgment alone. Most recently, I returned to
+                my .NET roots with <strong className="text-white">APITestGen</strong>, an ASP.NET Core 8
+                and React app that turns an OpenAPI spec into positive and negative test cases, a
+                Postman collection and a pytest suite, all derived from one validated test design.
               </p>
               <p>
                 Claude Code and GitHub Copilot are a daily part of how I work — for test

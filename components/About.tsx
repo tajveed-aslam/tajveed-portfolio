@@ -43,7 +43,9 @@ export function About() {
                 gates rather than trusting a model&apos;s judgment alone. Most recently, I returned to
                 my .NET roots with <strong className="text-white">APITestGen</strong>, an ASP.NET Core 8
                 and React app that turns an OpenAPI spec into positive and negative test cases, a
-                Postman collection and a pytest suite, all derived from one validated test design.
+                Postman collection and a pytest suite, all derived from one validated test design, and{" "}
+                <strong className="text-white">FitCheck</strong>, which scores a CV against a job description
+                with gaps verified against the CV&apos;s own text rather than taken on the model&apos;s word.
               </p>
               <p>
                 Claude Code and GitHub Copilot are a daily part of how I work — for test

@@ -20,6 +20,27 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    title:       "APITestGen — AI API Test Generator",
+    subtitle:    "AI Tooling · ASP.NET Core 8 + React + PostgreSQL + Gemini API",
+    description:
+      "A full-stack tool that turns an OpenAPI/Swagger spec, or just a sample API response, into a complete API test suite: positive and negative test cases, an importable Postman collection, and a ready-to-run pytest module. The model designs the test cases once as structured data, and both runnable outputs are derived from that same design, so the three artefacts never drift apart. Every run is saved to the user's history, and a one-click guest mode lets anyone try it live without signing up.",
+    tech: ["ASP.NET Core 8", "C#", "EF Core", "PostgreSQL", "React", "TypeScript", "Vite", "Gemini API", "JWT Auth", "xUnit"],
+    highlights: [
+      "Two-step pipeline: the LLM returns structured test cases that are validated and normalised server-side (bad methods, status codes and paths are dropped, ids re-assigned) before anything else is built from them",
+      "Postman v2.1 collection is generated deterministically in C# from the validated cases rather than by the model, so it always imports cleanly, with baseUrl/authToken variables and a status assertion per request",
+      "Provider-agnostic LLM layer (Gemini or OpenAI via config) with retry and backoff on 429/5xx, plus per-user and per-IP rate limiting so the public demo can't exhaust the API quota",
+      "37 xUnit tests covering the parser, Postman builder, input validation and the full pipeline against a fake LLM, plus an opt-in live smoke test against the real Gemini API",
+    ],
+    github:        "https://github.com/tajveed-aslam/APITestGen",
+    demo:          null,
+    gradient:      "from-indigo-500 via-violet-500 to-transparent",
+    badge:         "AI Tooling",
+    badgeColor:    "bg-indigo-500/20 text-indigo-300 border-indigo-500/30",
+    icon:          "🧬",
+    screenshot:    null,
+    screenshotAlt: null,
+  },
+  {
     title:       "Self-Healing Test Agent",
     subtitle:    "AI Agent · TypeScript + Playwright + Gemini API",
     description:

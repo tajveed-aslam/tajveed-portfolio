@@ -36,6 +36,34 @@ const LIVE_DEMO_NOTE =
 
 export const PROJECTS: Project[] = [
   {
+    slug:        "liveboard",
+    title:       "LiveBoard — Real-Time Collaborative Kanban",
+    tagline:     "Drag cards with your team and watch every change appear live, over SignalR.",
+    subtitle:    "Full-Stack Real-Time · ASP.NET Core 8 + SignalR + React + PostgreSQL",
+    description:
+      "A Kanban board built for simultaneous editing. Boards, columns and cards support full drag-and-drop (mouse, touch or keyboard), and every change is broadcast over SignalR to everyone on the board the moment it is saved. Share a board with a link, see who's online, see which card a teammate is editing, and follow a live activity feed. If the connection drops, it reconnects and resyncs on its own.",
+    tech: ["ASP.NET Core 8", "SignalR", "C#", "EF Core", "PostgreSQL", "React", "TypeScript", "dnd-kit", "JWT Auth", "xUnit", "Playwright"],
+    highlights: [
+      "Writes go through REST and are broadcast over SignalR only after they're saved; each event carries the resulting state (e.g. the final card order of every column a move touched), so concurrent edits converge on every screen",
+      "Per-board write serialisation, proven by an integration test that fires 40 random moves from two users at once and asserts no card is lost, duplicated or mis-ordered",
+      "Collaboration awareness: presence avatars, an \"editing\" badge on cards a teammate has open, and a \"someone else saved, load their version?\" prompt instead of silent overwrites",
+      "37 xUnit tests including real-time tests with two live SignalR clients, plus a Playwright suite that drives two separate users in two browser sessions against the deployed app",
+    ],
+    github:   "https://github.com/tajveed-aslam/LiveBoard",
+    demo:     "https://liveboard-tajveed.vercel.app/",
+    badge:    "Real-Time",
+    icon:     "🗂️",
+    ai:       false,
+    featured: true,
+    gallery: [
+      { src: "/projects/liveboard/1-board.jpg",       alt: "LiveBoard board with two people online, an 'editing' badge on a card and the live activity feed",          caption: "Two people on one board: presence, an 'editing' badge and the live activity feed" },
+      { src: "/projects/liveboard/2-card-editor.jpg", alt: "Card editor showing a notice that someone else just saved changes, with a Load their version link",        caption: "No silent overwrites: \"Someone else just saved, load their version?\"" },
+      { src: "/projects/liveboard/3-share.jpg",       alt: "Share dialog with the board's invite link, copy button and reset link option",                              caption: "Share by link; the owner can reset it to cut off old links" },
+      { src: "/projects/liveboard/4-landing.jpg",     alt: "LiveBoard landing page with a preview board and the Try the live demo button",                                caption: "Landing page with one-click guest demo" },
+    ],
+    note: "Live demo: click “Try the live demo” for a guest session with a sample board, then click Share and open the link in a private window to see two people editing the same board in real time. The API runs on a free tier that sleeps when idle, so the first visit can take up to a minute to wake.",
+  },
+  {
     slug:        "fitcheck",
     title:       "FitCheck — CV-to-Job Match Analyzer",
     tagline:     "Score a CV against any job post, with gaps verified against the CV's own text.",

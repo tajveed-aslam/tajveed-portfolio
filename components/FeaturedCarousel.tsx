@@ -142,7 +142,8 @@ export function FeaturedCarousel() {
           </div>
 
           {/* Project tabs double as pagination and show autoplay progress. */}
-          <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5" aria-label="Choose a featured project">
+          {/* Flexible row: stays balanced however many projects are featured. */}
+          <div className="mt-6 flex flex-wrap gap-2 [&>*]:min-w-[150px] [&>*]:flex-1" aria-label="Choose a featured project">
             {FEATURED.map((p, i) => (
               <button
                 key={p.slug}

@@ -36,6 +36,34 @@ const LIVE_DEMO_NOTE =
 
 export const PROJECTS: Project[] = [
   {
+    slug:        "salahcompanion",
+    title:       "SalahCompanion — Prayer Times, Qibla & Ramadan Tracker",
+    tagline:     "A React Native prayer companion: GPS prayer times, a live Qibla compass and a fasting tracker.",
+    subtitle:    "Mobile App · React Native (Expo) + TypeScript + Appium",
+    description:
+      "A cross-platform mobile app for daily prayer. It finds you by GPS and shows the day's prayer times from the AlAdhan API with a live countdown to the next one, points a compass at the Kaaba using the phone's magnetometer, tracks Ramadan fasts with streaks and fasts still to make up, and sends a notification at each prayer time. It runs on Android and iOS through Expo, and as a web app in the browser.",
+    tech: ["React Native", "Expo", "TypeScript", "React Navigation", "expo-location", "expo-sensors", "expo-notifications", "AsyncStorage", "Jest", "Appium", "WebdriverIO"],
+    highlights: [
+      "Qibla from the great-circle bearing to the Kaaba, driven by the OS heading API (tilt-compensated, true north) with a raw-magnetometer fallback, smoothed on the unit circle so 359°→1° doesn't spin the dial, plus a haptic tick when you're aligned",
+      "Prayer times in the location's own time zone, the calculation method and Asr school picked automatically by region, and offline fallback to the last fetch; a week of local notifications is re-queued every time the app opens",
+      "Ramadan tracker uses the real Hijri calendar (29 or 30 days), locks upcoming days, and persists per year in AsyncStorage; current streak, best streak and fasts to make up",
+      "41 Jest unit tests for the maths and parsing, plus an Appium (WebdriverIO + UiAutomator2) suite that mocks GPS, grants and denies permissions, and checks a real notification in the Android shade",
+    ],
+    github:   "https://github.com/tajveed-aslam/SalahCompanion",
+    demo:     "https://salahcompanion.vercel.app/",
+    badge:    "Mobile",
+    icon:     "🕌",
+    ai:       false,
+    featured: true,
+    gallery: [
+      { src: "/projects/salahcompanion/1-overview.jpg", alt: "Three phones showing SalahCompanion's prayer times, the Qibla compass facing Mecca and the Ramadan tracker", caption: "Prayer times with a live countdown, the Qibla compass and the Ramadan tracker" },
+      { src: "/projects/salahcompanion/2-qibla.jpg",    alt: "The Qibla compass in light and dark mode, showing 'You are facing the Qibla'",                               caption: "Qibla compass: turns green with a haptic tick when you face the Kaaba" },
+      { src: "/projects/salahcompanion/3-dark.jpg",     alt: "Prayer times, Ramadan tracker and settings in dark mode",                                                     caption: "Follows the phone's light or dark mode" },
+      { src: "/projects/salahcompanion/4-settings.jpg", alt: "Calculation method settings, the location-declined screen and the prayer times list",                         caption: "Regional calculation methods, and a sample city if location is declined" },
+    ],
+    note: "Live demo: the web version of the app. Allow location (or pick the sample city) to see your prayer times; open it on a phone for the live Qibla compass. Prayer notifications need the mobile app, which runs in Expo Go on Android and iOS.",
+  },
+  {
     slug:        "liveboard",
     title:       "LiveBoard — Real-Time Collaborative Kanban",
     tagline:     "Drag cards with your team and watch every change appear live, over SignalR.",

@@ -44,9 +44,11 @@ export function About() {
                 and React app that turns an OpenAPI spec into positive and negative test cases, a
                 Postman collection and a pytest suite, all derived from one validated test design, and{" "}
                 <strong className="font-semibold text-white">FitCheck</strong>, which scores a CV against a job description
-                with gaps verified against the CV&apos;s own text rather than taken on the model&apos;s word. My latest,{" "}
-                <strong className="font-semibold text-white">LiveBoard</strong>, is a real-time collaborative Kanban board on
-                ASP.NET Core SignalR, tested with two live users at once.
+                with gaps verified against the CV&apos;s own text rather than taken on the model&apos;s word, and{" "}
+                <strong className="font-semibold text-white">LiveBoard</strong>, a real-time collaborative Kanban board on
+                ASP.NET Core SignalR, tested with two live users at once. My latest is mobile:{" "}
+                <strong className="font-semibold text-white">SalahCompanion</strong>, a React Native app with GPS prayer
+                times, a magnetometer Qibla compass and a Ramadan tracker, tested end to end with Appium.
               </p>
               <p>
                 Claude Code and GitHub Copilot are a daily part of how I work — for test

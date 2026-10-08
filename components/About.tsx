@@ -36,7 +36,7 @@ export function About() {
                 from scratch, then wrote a production-quality Playwright automation suite for it.
                 I also built <strong className="font-semibold text-white">TestForge</strong>, an AI-powered tool
                 that generates test code across 10 frameworks and 8 types of SDLC documentation
-                using the Claude API with real-time streaming, and{" "}
+                using the Gemini API with real-time streaming, and{" "}
                 <strong className="font-semibold text-white">Self-Healing Test Agent</strong>, an agent that
                 diagnoses and repairs stale Playwright selectors under two deterministic safety
                 gates rather than trusting a model&apos;s judgment alone. Most recently, I returned to

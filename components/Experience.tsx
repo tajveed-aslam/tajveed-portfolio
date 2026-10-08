@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 interface Role {
   title:     string;
@@ -41,70 +42,61 @@ const ROLES: Role[] = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Reveal>
-          <div className="text-center mb-14">
-            <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-3">
-              Experience
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              9 years,{" "}
-              <span className="gradient-text">two disciplines</span>
-            </h2>
-            <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
-              Three years building the software, six years making sure it works.
-            </p>
-          </div>
-        </Reveal>
+    <section id="experience" className="section bg-ink-900/40">
+      <div className="container-page">
+        <SectionHeading
+          eyebrow="Experience"
+          title={<>9 years, <span className="text-accent">two disciplines</span></>}
+          lead="Three years building the software, six years making sure it works."
+        />
 
-        <div className="relative">
-          <div className="absolute left-[7px] sm:left-[9px] top-2 bottom-2 w-px bg-gradient-to-b from-teal-500/50 via-sky-500/30 to-transparent" />
-
-          <div className="space-y-10">
-            {ROLES.map((role, i) => (
-              <Reveal key={role.org} delay={i * 100}>
-                <div className="relative pl-8 sm:pl-10">
-                  <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-teal-400 bg-gray-950" />
-
-                  <div className="glow-card bg-gray-900/60 rounded-2xl p-7 border border-white/5">
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
-                      <h3 className="text-lg font-bold text-white">
-                        {role.title} <span className="text-gray-500 font-normal">— {role.org}</span>
-                      </h3>
-                      <span className="text-sm text-teal-300 font-mono">{role.period}</span>
+        <ol className="relative space-y-6 border-l border-white/[0.08] pl-6 sm:pl-10">
+          {ROLES.map((role, i) => (
+            <li key={role.org} className="relative">
+              <span className="absolute -left-[31px] top-7 h-3 w-3 rounded-full border-2 border-accent bg-ink-950 sm:-left-[47px]" aria-hidden />
+              <Reveal delay={i * 100}>
+                <div className="panel p-6 sm:p-8">
+                  <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+                    <div>
+                      <h3 className="font-display text-xl font-semibold text-white">{role.title}</h3>
+                      <p className="mt-0.5 text-sm text-slate-400">
+                        <span className="font-medium text-slate-200">{role.org}</span> · {role.location}
+                      </p>
                     </div>
-                    <p className="text-xs text-gray-500 mb-4">{role.location}</p>
-                    {role.note && (
-                      <p className="text-xs text-amber-300/80 mb-4 italic">{role.note}</p>
-                    )}
-                    <ul className="space-y-2">
-                      {role.points.map((p) => (
-                        <li key={p} className="flex items-start gap-2 text-sm text-gray-400">
-                          <span className="text-teal-400 mt-0.5 shrink-0">▸</span>
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
+                    <span className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 font-mono text-xs text-accent">
+                      {role.period}
+                    </span>
                   </div>
+                  {role.note && (
+                    <p className="mt-4 inline-flex rounded-md bg-emerald-400/10 px-2.5 py-1 text-xs font-medium text-emerald-300">
+                      ↑ {role.note}
+                    </p>
+                  )}
+                  <ul className="mt-5 grid gap-3 md:grid-cols-2">
+                    {role.points.map((p) => (
+                      <li key={p} className="flex gap-3 text-sm leading-relaxed text-slate-400">
+                        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
-            ))}
+            </li>
+          ))}
 
-            {/* Education */}
+          <li className="relative">
+            <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-slate-600 bg-ink-950 sm:-left-[47px]" aria-hidden />
             <Reveal delay={ROLES.length * 100}>
-              <div className="relative pl-8 sm:pl-10">
-                <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-gray-600 bg-gray-950" />
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h3 className="text-base font-semibold text-gray-300">
-                    B.S. Computer Science <span className="text-gray-500 font-normal">— KIET, Pakistan</span>
-                  </h3>
-                  <span className="text-sm text-gray-500 font-mono">Aug 2011 – Aug 2016</span>
-                </div>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 px-1">
+                <h3 className="font-display text-base font-semibold text-slate-200">
+                  B.S. Computer Science <span className="font-normal text-slate-500">— KIET, Pakistan</span>
+                </h3>
+                <span className="font-mono text-xs text-slate-500">Aug 2011 – Aug 2016</span>
               </div>
             </Reveal>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
   );

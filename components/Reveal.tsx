@@ -6,7 +6,16 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 // prefers-reduced-motion is handled globally in globals.css, which
 // collapses all transition-durations to near-zero, so this degrades to an
 // instant appearance rather than skipping content for those users.
-export function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }) {
+export function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  /** Applied to the wrapper, e.g. grid placement such as col-span. */
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -21,7 +30,7 @@ export function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: n
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
 
     observer.observe(node);
@@ -34,7 +43,7 @@ export function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: n
       style={{ transitionDelay: `${delay}ms` }}
       className={`transition-all duration-700 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      }`}
+      } ${className}`}
     >
       {children}
     </div>

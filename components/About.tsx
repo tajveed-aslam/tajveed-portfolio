@@ -1,27 +1,25 @@
 import { Reveal } from "@/components/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { STATS } from "@/lib/projects";
+
+const facts = [
+  { value: "6 yrs",   label: "QA & test automation"                   },
+  { value: "3 yrs",   label: "C# / .NET development"                  },
+  { value: "10K+",    label: "concurrent interactions load-tested"    },
+  { value: `${STATS.aiProjects}`, label: "AI-powered projects shipped" },
+];
 
 export function About() {
-  const stats = [
-    { value: "9",     label: "Years in Software"     },
-    { value: "2,400+", label: "Automated Tests Authored" },
-    { value: "4",     label: "Major Projects"        },
-    { value: "4",     label: "AI-Powered Projects"   },
-  ];
-
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          {/* Text */}
+    <section id="about" className="section">
+      <div className="container-page">
+        <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr] lg:items-start">
           <Reveal>
-            <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-3">
-              About Me
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Quality-first engineer,{" "}
-              <span className="gradient-text">full-stack learner</span>
-            </h2>
-            <div className="space-y-4 text-gray-400 leading-relaxed">
+            <SectionHeading
+              eyebrow="About"
+              title={<>Quality-first engineer, <span className="text-accent">full-stack builder</span></>}
+            />
+            <div className="-mt-4 space-y-5 text-base leading-relaxed text-slate-300 text-pretty">
               <p>
                 I&apos;m a Senior SDET with 9 years in software — 6 in QA and test automation,
                 built on 3 as a C#/.NET developer. That developer background bridges dev and QA:
@@ -32,19 +30,19 @@ export function About() {
                 real-time, call-center decisioning system processing 10,000+ concurrent interactions.
               </p>
               <p>
-                To deepen my engineering breadth, I built <strong className="text-white">A&amp;Z Mart</strong> —
+                To deepen my engineering breadth, I built <strong className="font-semibold text-white">A&amp;Z Mart</strong> —
                 a full-stack e-commerce platform using Next.js 14, FastAPI, and SQLite — entirely
                 from scratch, then wrote a production-quality Playwright automation suite for it.
-                I also built <strong className="text-white">TestForge</strong>, an AI-powered tool
+                I also built <strong className="font-semibold text-white">TestForge</strong>, an AI-powered tool
                 that generates test code across 10 frameworks and 8 types of SDLC documentation
                 using the Claude API with real-time streaming, and{" "}
-                <strong className="text-white">Self-Healing Test Agent</strong>, an agent that
+                <strong className="font-semibold text-white">Self-Healing Test Agent</strong>, an agent that
                 diagnoses and repairs stale Playwright selectors under two deterministic safety
                 gates rather than trusting a model&apos;s judgment alone. Most recently, I returned to
-                my .NET roots with <strong className="text-white">APITestGen</strong>, an ASP.NET Core 8
+                my .NET roots with <strong className="font-semibold text-white">APITestGen</strong>, an ASP.NET Core 8
                 and React app that turns an OpenAPI spec into positive and negative test cases, a
                 Postman collection and a pytest suite, all derived from one validated test design, and{" "}
-                <strong className="text-white">FitCheck</strong>, which scores a CV against a job description
+                <strong className="font-semibold text-white">FitCheck</strong>, which scores a CV against a job description
                 with gaps verified against the CV&apos;s own text rather than taken on the model&apos;s word.
               </p>
               <p>
@@ -56,16 +54,14 @@ export function About() {
             </div>
           </Reveal>
 
-          {/* Stats grid */}
           <Reveal delay={150}>
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="glow-card bg-gray-900/60 rounded-2xl p-6 border border-white/5 text-center"
-                >
-                  <div className="text-4xl font-extrabold gradient-text mb-1">{s.value}</div>
-                  <div className="text-sm text-gray-400">{s.label}</div>
+            <div className="grid grid-cols-2 gap-3 lg:mt-24">
+              {facts.map((f) => (
+                <div key={f.label} className="panel group p-6 transition-colors hover:border-accent/30">
+                  <div className="font-display text-3xl font-bold text-white transition-colors group-hover:text-accent sm:text-4xl">
+                    {f.value}
+                  </div>
+                  <div className="mt-2 text-sm leading-snug text-slate-400">{f.label}</div>
                 </div>
               ))}
             </div>

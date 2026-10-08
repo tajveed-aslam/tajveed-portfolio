@@ -96,23 +96,30 @@ export function Nav() {
           </a>
 
           {/* The CV button lives in the fixed bar, so it stays in the top-right corner on scroll. */}
-          <div className={`flex items-center rounded-xl transition-shadow duration-300 ${scrolled ? "shadow-glow" : ""}`}>
+          {/* One shape with a fixed height: both halves stretch to it, so they always line up, and the
+              corners, clipping and glow belong to the whole button rather than to each half. */}
+          <div
+            className={`flex h-9 items-stretch overflow-hidden rounded-xl bg-accent text-ink-950 transition-shadow duration-300 ${
+              scrolled ? "shadow-glow" : ""
+            }`}
+          >
             <a
               href={SITE.cvUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-accent py-2 pl-3.5 pr-3 text-sm font-semibold text-ink-950 transition-colors hover:bg-accent-bright sm:rounded-r-none"
+              className="flex items-center gap-2 px-3.5 text-sm font-semibold transition-colors hover:bg-accent-bright"
             >
               <FileIcon width={16} height={16} />
               View CV
             </a>
+            <span aria-hidden className="my-2 hidden w-px bg-ink-950/25 sm:block" />
             <a
               href={SITE.resumePdf}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download resume (PDF)"
               title="Download resume (PDF)"
-              className="hidden items-center rounded-r-xl border-l border-ink-950/20 bg-accent py-2 px-2.5 text-ink-950 transition-colors hover:bg-accent-bright sm:inline-flex"
+              className="hidden w-9 items-center justify-center transition-colors hover:bg-accent-bright sm:flex"
             >
               <DownloadIcon width={16} height={16} />
             </a>

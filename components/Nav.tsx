@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
-import { CloseIcon, DownloadIcon, FileIcon, GitHubIcon, LinkedInIcon, MenuIcon } from "@/components/ui/Icons";
+import { CloseIcon, DownloadIcon, FileIcon, FiverrIcon, GitHubIcon, LinkedInIcon, MenuIcon, UpworkIcon } from "@/components/ui/Icons";
 
 const LINKS = [
   { label: "Work",       id: "featured"   },
@@ -10,7 +10,15 @@ const LINKS = [
   { label: "Experience", id: "experience" },
   { label: "Skills",     id: "skills"     },
   { label: "Projects",   id: "projects"   },
+  { label: "Hire me",    id: "hire"       },
   { label: "Contact",    id: "contact"    },
+];
+
+const SOCIALS = [
+  { label: "GitHub",   href: SITE.github,   Icon: GitHubIcon   },
+  { label: "LinkedIn", href: SITE.linkedin, Icon: LinkedInIcon },
+  { label: "Fiverr",   href: SITE.fiverr,   Icon: FiverrIcon   },
+  { label: "Upwork",   href: SITE.upwork,   Icon: UpworkIcon   },
 ];
 
 export function Nav() {
@@ -87,13 +95,21 @@ export function Nav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2">
-          <a href={SITE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hidden h-9 w-9 place-items-center rounded-lg text-slate-400 transition-colors hover:text-white md:grid">
-            <GitHubIcon />
-          </a>
-          <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hidden h-9 w-9 place-items-center rounded-lg text-slate-400 transition-colors hover:text-white md:grid">
-            <LinkedInIcon />
-          </a>
+        <div className="flex items-center gap-1.5">
+          {/* Icons show where there's room: tablets (no text links yet) and wide desktops. */}
+          {SOCIALS.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              title={label}
+              className="hidden h-9 w-9 place-items-center rounded-lg text-slate-400 transition-colors hover:text-white md:grid lg:hidden xl:grid"
+            >
+              <Icon />
+            </a>
+          ))}
 
           {/* The CV button lives in the fixed bar, so it stays in the top-right corner on scroll. */}
           {/* One shape with a fixed height: both halves stretch to it, so they always line up, and the
@@ -154,8 +170,11 @@ export function Nav() {
             ))}
           </ul>
           <div className="mt-3 flex gap-2 px-3">
-            <a href={SITE.github} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="GitHub"><GitHubIcon /></a>
-            <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="LinkedIn"><LinkedInIcon /></a>
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label={label} title={label}>
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
       )}

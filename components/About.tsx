@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { STATS } from "@/lib/projects";
+import { SITE } from "@/lib/site";
 
 const facts = [
   { value: "6 yrs",   label: "QA & test automation"                   },
@@ -24,7 +25,7 @@ export function About() {
                 I&apos;m a Senior SDET with 9 years in software — 6 in QA and test automation,
                 built on 3 as a C#/.NET developer. That developer background bridges dev and QA:
                 I read and review code to understand system behavior before I design a test for
-                it, rather than treating the app as a black box. At Afiniti, I specialise in
+                it, rather than treating the app as a black box. At Afiniti (2020–2026), I specialised in
                 end-to-end Playwright automation backed by REST API coverage, SQL/backend
                 validation, and CI/CD integration — including load and functional testing on a
                 real-time, call-center decisioning system processing 10,000+ concurrent interactions.
@@ -48,8 +49,11 @@ export function About() {
               <p>
                 Claude Code and GitHub Copilot are a daily part of how I work — for test
                 scaffolding, edge-case generation, and refactoring — and I&apos;m currently upskilling
-                in Microsoft Power Platform testing. Open to on-site, hybrid, and remote roles,
-                with relocation on the table.
+                in Microsoft Power Platform testing. I&apos;m open to on-site, hybrid, and remote roles,
+                willing to relocate, and available for freelance projects on{" "}
+                <a href={SITE.fiverr} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent underline-offset-4 hover:underline">Fiverr</a>
+                {" "}and{" "}
+                <a href={SITE.upwork} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent underline-offset-4 hover:underline">Upwork</a>.
               </p>
             </div>
           </Reveal>

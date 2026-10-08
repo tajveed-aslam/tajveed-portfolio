@@ -1,10 +1,12 @@
 import { Reveal } from "@/components/Reveal";
-import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon } from "@/components/ui/Icons";
+import { FileIcon, FiverrIcon, GitHubIcon, LinkedInIcon, MailIcon, UpworkIcon } from "@/components/ui/Icons";
 import { SITE } from "@/lib/site";
 
 const LINKS = [
   { icon: <MailIcon />,     label: "Email",    value: SITE.email,                href: `mailto:${SITE.email}` },
   { icon: <LinkedInIcon />, label: "LinkedIn", value: "muhammad-tajveed-aslam",  href: SITE.linkedin },
+  { icon: <FiverrIcon />,   label: "Fiverr",   value: "Hire me for a gig",       href: SITE.fiverr },
+  { icon: <UpworkIcon />,   label: "Upwork",   value: "Hire me for a contract",  href: SITE.upwork },
   { icon: <GitHubIcon />,   label: "GitHub",   value: "tajveed-aslam",           href: SITE.github },
   { icon: <FileIcon />,     label: "CV",       value: "View online",             href: SITE.cvUrl },
 ];
@@ -26,14 +28,15 @@ export function Contact() {
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg text-pretty">
                   I&apos;m open to full-time roles, contract work, and consulting, especially positions that
-                  blend QA expertise with full-stack development. The fastest way to reach me is email.
+                  blend QA expertise with full-stack development. The fastest way to reach me is email; for
+                  freelance projects you can also hire me directly on Fiverr or Upwork.
                 </p>
                 <a href={`mailto:${SITE.email}`} className="btn-primary mt-8">
                   <MailIcon width={16} height={16} /> {SITE.email}
                 </a>
               </div>
 
-              <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <ul className="grid gap-3 sm:grid-cols-2">
                 {LINKS.map((link) => (
                   <li key={link.label}>
                     <a

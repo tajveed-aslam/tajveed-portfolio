@@ -31,6 +31,34 @@ export function LinkedInIcon(props: IconProps) {
   );
 }
 
+/** Simple letter marks for the freelance platforms (not the official logos). */
+function LetterMark({ text, ...props }: IconProps & { text: string }) {
+  return (
+    <svg width={18} height={18} viewBox="0 0 24 24" aria-hidden {...props}>
+      <rect x="1" y="1" width="22" height="22" rx="6" fill="currentColor" />
+      <text
+        x="12"
+        y="16.5"
+        textAnchor="middle"
+        fontSize={text.length > 1 ? 11 : 13}
+        fontWeight={800}
+        fontFamily="system-ui, sans-serif"
+        fill="#060a13"
+      >
+        {text}
+      </text>
+    </svg>
+  );
+}
+
+export function FiverrIcon(props: IconProps) {
+  return <LetterMark text="fi" {...props} />;
+}
+
+export function UpworkIcon(props: IconProps) {
+  return <LetterMark text="up" {...props} />;
+}
+
 export function MailIcon(props: IconProps) {
   return (
     <svg {...stroke(props)}>

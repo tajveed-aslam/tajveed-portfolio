@@ -1,5 +1,5 @@
 import { HeroCollage } from "@/components/HeroCollage";
-import { ArrowRightIcon, GitHubIcon, LinkedInIcon } from "@/components/ui/Icons";
+import { ArrowRightIcon, FiverrIcon, GitHubIcon, LinkedInIcon, UpworkIcon } from "@/components/ui/Icons";
 import { STATS } from "@/lib/projects";
 import { SITE } from "@/lib/site";
 
@@ -22,7 +22,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            Open to on-site, hybrid &amp; remote roles — relocation OK
+            Open to full-time roles &amp; freelance projects · Willing to relocate
           </p>
 
           <p className="mb-4 font-display text-lg text-slate-300 sm:text-xl">
@@ -34,22 +34,30 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg text-pretty">
-            9 years in software — 6 in QA and test automation, built on 3 as a C#/.NET developer. I write
-            Playwright suites for real-time ML systems by day, and build AI-powered testing tools with
-            ASP.NET Core, React, Next.js, FastAPI and LLM APIs.
+            9 years in software — 6 in QA and test automation, built on 3 as a C#/.NET developer. I&apos;ve
+            built Playwright suites for real-time ML systems at enterprise scale, and I build AI-powered
+            testing tools with ASP.NET Core, React, Next.js, FastAPI and LLM APIs.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a href="#featured" className="btn-primary">
               View my work <ArrowRightIcon width={16} height={16} />
             </a>
-            <a href="#contact" className="btn-secondary">Get in touch</a>
-            <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="LinkedIn">
-              <LinkedInIcon />
-            </a>
-            <a href={SITE.github} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="GitHub">
-              <GitHubIcon />
-            </a>
+            <a href="#hire" className="btn-secondary">Hire me</a>
+            <span className="flex gap-2">
+              <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="LinkedIn" title="LinkedIn">
+                <LinkedInIcon />
+              </a>
+              <a href={SITE.github} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="GitHub" title="GitHub">
+                <GitHubIcon />
+              </a>
+              <a href={SITE.fiverr} target="_blank" rel="noopener noreferrer" className="icon-btn hover:text-[#1dbf73]" aria-label="Hire me on Fiverr" title="Hire me on Fiverr">
+                <FiverrIcon />
+              </a>
+              <a href={SITE.upwork} target="_blank" rel="noopener noreferrer" className="icon-btn hover:text-[#14a800]" aria-label="Hire me on Upwork" title="Hire me on Upwork">
+                <UpworkIcon />
+              </a>
+            </span>
           </div>
         </div>
 

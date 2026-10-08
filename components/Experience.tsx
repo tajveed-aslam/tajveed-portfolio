@@ -14,7 +14,7 @@ const ROLES: Role[] = [
   {
     title:    "Senior SDET",
     org:      "Afiniti",
-    period:   "Aug 2020 – Present",
+    period:   "Aug 2020 – Aug 2026",
     location: "Pakistan · AI-powered enterprise software",
     note:     "Promoted from SDET to Senior SDET, Feb 2022",
     points: [

@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
       "41 Jest unit tests for the maths and parsing, plus an Appium (WebdriverIO + UiAutomator2) suite that mocks GPS, grants and denies permissions, and checks a real notification in the Android shade",
     ],
     github:   "https://github.com/tajveed-aslam/SalahCompanion",
-    demo:     null,
+    demo:     "https://salahcompanion.vercel.app/",
     badge:    "Mobile",
     icon:     "🕌",
     ai:       false,
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
       { src: "/projects/salahcompanion/3-dark.jpg",     alt: "Prayer times, Ramadan tracker and settings in dark mode",                                                     caption: "Follows the phone's light or dark mode" },
       { src: "/projects/salahcompanion/4-settings.jpg", alt: "Calculation method settings, the location-declined screen and the prayer times list",                         caption: "Regional calculation methods, and a sample city if location is declined" },
     ],
-    note: "Mobile app built with Expo: open it in Expo Go on Android or iOS, or try the web version in a browser. The live compass needs a phone, and notifications need the mobile app.",
+    note: "Live demo: the web version of the app. Allow location (or pick the sample city) to see your prayer times; open it on a phone for the live Qibla compass. Prayer notifications need the mobile app, which runs in Expo Go on Android and iOS.",
   },
   {
     slug:        "liveboard",

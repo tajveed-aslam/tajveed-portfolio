@@ -254,6 +254,33 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    slug:        "travel-booking-qa",
+    title:       "Travel Booking QA — Playwright Suite",
+    tagline:     "UI + API tests for a travel booking flow, with 13 real defects found and tracked.",
+    subtitle:    "QA Automation Framework · Playwright + TypeScript + GitHub Actions",
+    description:
+      "A client-facing test automation sample for a travel booking platform: search, booking, payment and cancellation. UI tests drive the BlazeDemo travel agency on desktop Chromium, Firefox and WebKit plus emulated Pixel 7 and iPhone 14; API tests cover the Restful-Booker booking API end to end. Every selector, status code and response shape was explored on the live sites first, and every defect found is written up Jira-style and tracked by a test that turns red the day it's fixed.",
+    tech: ["Playwright", "TypeScript", "Page Object Model", "API Testing", "zod", "axe-core", "GitHub Actions", "ESLint"],
+    highlights: [
+      "45 tests (129 runs across 5 browser/device projects + API), passing in 3 consecutive full runs with zero flaky tests",
+      "13 real defects found and documented, including price-accuracy bugs (the amount charged differs from the price quoted; cents silently truncated by the API)",
+      "Known defects kept visible with test.fail() and bug ids instead of being skipped; strict zod contracts, self-cleaning test data, axe baseline and visual regression",
+      "GitHub Actions: smoke on every pull request, a full 6-job cross-browser and mobile matrix on push and nightly, with reports, traces and a run summary",
+    ],
+    github:   "https://github.com/tajveed-aslam/travel-booking-qa-playwright",
+    demo:     null,
+    badge:    "QA Automation",
+    icon:     "✈️",
+    ai:       false,
+    featured: false,
+    gallery: [
+      { src: "/projects/travel-booking-qa/1-report.jpg",       alt: "Playwright HTML report: 121 passed, 0 failed, 0 flaky, 8 skipped, with API tests tagged smoke and regression", caption: "HTML report of a full run: 0 failed, 0 flaky" },
+      { src: "/projects/travel-booking-qa/2-known-defect.jpg", alt: "A known-defect test in the report: BUG-002, expected 91476 cents, received 55500",                                caption: "A tracked defect: the confirmation charges 555.00, not the quoted 914.76" },
+      { src: "/projects/travel-booking-qa/3-ci-matrix.jpg",    alt: "GitHub Actions run: typecheck, lint and format plus a six-job test matrix, all green",                                caption: "GitHub Actions: static checks and the 6-job browser/device matrix" },
+    ],
+    note: "No live demo: this is a test suite. The GitHub repo has the README with results, the bug reports, test plan and test cases, and the Actions tab shows the runs.",
+  },
+  {
     slug:        "azmart-qa",
     title:       "AZMart — Playwright Automation Suite",
     tagline:     "~107 UI and API tests for A&Z Mart, with Page Objects and security payloads.",

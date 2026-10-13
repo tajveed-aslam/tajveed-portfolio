@@ -325,6 +325,28 @@ export const PROJECTS: Project[] = [
     gallery:  [],
     note:     "Private repository — corporate project",
   },
+  {
+    slug:        "ai-agent-qa-harness",
+    title:       "AI Agent QA Harness — LLM Testing Framework",
+    tagline:     "Zero-cost fixture replay, behavioral contracts, prompt injection battery and stability scoring.",
+    subtitle:    "AI Testing · TypeScript + Vitest + Playwright + Gemini API",
+    description:
+      "Enterprise test harness demonstrating how to test AI agents and LLM-powered features without fragile string matching. Features recorded zero-cost fixture replay for CI, Zod structural schema contracts, scored semantic rubrics, a 12-attack prompt-injection battery (direct and indirect in retrieved docs), failure injection (429, 500, timeouts), non-determinism stability measurement (N=10), and token budget enforcement.",
+    tech: ["TypeScript", "Vitest", "Playwright", "Zod", "Express", "Gemini API", "GitHub Actions"],
+    highlights: [
+      "Zero-cost recorded fixture mode runs multi-turn stateful agent tests in ~1.5s with zero API key dependencies in CI",
+      "12-attack prompt-injection battery proving resistance to direct DAN jailbreaks and indirect malicious payloads in retrieved documents",
+      "Failure injection (HTTP 429, 500, timeouts, malformed JSON) with automated proof of zero raw stack traces leaked to users",
+      "Quantitative non-determinism scoring (N=10 runs) achieving 100% stability, plus token and cost regression budgeting",
+    ],
+    github:   "https://github.com/tajveed-aslam/ai-agent-qa-harness",
+    demo:     null,
+    badge:    "AI Testing",
+    icon:     "🤖",
+    ai:       true,
+    featured: false,
+    gallery:  [],
+  },
 ];
 
 export const FEATURED = PROJECTS.filter((p) => p.featured && p.gallery.length > 0);

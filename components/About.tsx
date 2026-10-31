@@ -50,7 +50,10 @@ export function About() {
                 <strong className="font-semibold text-white">SalahCompanion</strong>, with GPS prayer times, a magnetometer
                 Qibla compass and a Ramadan tracker, and{" "}
                 <strong className="font-semibold text-white">ShareCart</strong>, a family grocery list on Supabase that
-                syncs in real time, scans barcodes and is locked down with Postgres Row Level Security.
+                syncs in real time, scans barcodes and is locked down with Postgres Row Level Security. My
+                biggest build yet is <strong className="font-semibold text-white">PitchIQ</strong>, which counts football
+                juggling touches from a phone video with my own computer-vision pipeline, measured against hand-counted
+                ground truth and a blind test clip, and has an AI coach whose feedback is checked against those numbers.
               </p>
               <p>
                 Claude Code and GitHub Copilot are a daily part of how I work — for test
